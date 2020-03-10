@@ -38,6 +38,7 @@ e.g. `let foo = 0; console.log(foo++) // that should return in the console 0`
 **CSS Section** 
 
 **Q6: skipped**
+
 **Q7: In your own words, explain, what is ‘!important’ in css.  Also how does it work?  Are there any special circumstances when using it, where it’s behaviour might not be what you expect?**
 
 Ans: `!important` is a css rule used when you want to override certain css property that is already defined inside an existing html element style. It probably won't do the expected when that property we want to override has already a high level rule (f.e. !veryimportant). 
@@ -60,5 +61,7 @@ I've not yet faced any difficulties with that tehcnology.
 
 **How do you test in your unit tests to see if the correct properties are being passed to child components.**
 `const wrapper = mount(component); expect(component.props().propName).toEqual(value)`
+
+**React practise**
 
 
