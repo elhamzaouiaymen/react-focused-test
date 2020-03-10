@@ -22,14 +22,25 @@ const AwesomeComponent: FunctionComponent<{}> = props => {
     setWindowLiveWidth(window.innerWidth);
   });
 
-  const handleKeyPressed = (e: KeyboardEvent<HTMLInputElement>) => {
-    setDivHeight(parseInt(e.currentTarget.value));
+  const handleInputChanged = (e: ChangeEvent<HTMLInputElement>) => {
+    setDivHeight(parseInt(e.target.value));
+
+    setTimeout(() => {
+      const input = document.getElementById('height-input');
+      if (input !== null) input.focus();
+    }, 500);
   };
 
   return (
     <StyledDiv>
       <span>Live window width : {windowLiveWidth}</span>
-      <input type="number" maxLength={3} value={divHeight} onKeyPress={handleKeyPressed} />
+      <input
+        id="height-input"
+        type="number"
+        maxLength={3}
+        value={divHeight}
+        onChange={handleInputChanged}
+      />
     </StyledDiv>
   );
 };
